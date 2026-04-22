@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nyondo-Stock Registration</title>
+    <link rel="stylesheet" href="/css/stock.css">
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Stock Registration</h2>
+
+      <form action="/stock" method="post">
+        <label>Item Name</label>
+        <input type="text" name="itemName" placeholder="Enter item name" />
+
+        <label>Category</label>
+        <select name="category">
+          <option>Select category</option>
+          <option>Iron Sheets</option>
+          <option>Cement</option>
+          <option>Paint</option>
+          <option>Steel Rods</option>
+        </select>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity" placeholder="Enter quantity" />
+
+        <label>Unit Price (UGX)</label>
+        <input type="number" name="unitPrice" placeholder="Enter price" />
+
+        <label>Supplier Name</label>
+        <input type="text" name="supplierName" placeholder="Enter supplier name" />
+
+         <label>Transportation cost</label>
+        <input type="number" name="transportationCost" placeholder="Enter transportation cost" />
+
+        <label>Date Received</label>
+        <input type="date" name="dateReceived"/>
+
+      <button type="submit">Register Stock</button>
+      
+      </form>
+
+      <p class="note">All fields marked are required</p>
+    </div>
+
+  </body>
+</html>

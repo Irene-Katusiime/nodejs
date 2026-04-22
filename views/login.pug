@@ -1,0 +1,14 @@
+extends layout 
+block content
+    .Login-container
+        h2 Login
+        // This is a form
+        form(action='/login' method='post')
+            .form-group
+                label Email
+                input(type='email' name='email' placeholder='Enter your email')
+            .form-group
+                label Password
+                input(type='password' name='password' placeholder='Enter password')
+            button.Login-btn Login
+            script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js' integrity='sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI' crossorigin='anonymous')

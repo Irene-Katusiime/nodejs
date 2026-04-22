@@ -1,0 +1,28 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB' crossorigin='anonymous')
+link(rel='stylesheet' href='/css/signup.css')
+
+ul.nav.nav-pills
+  li.nav-item
+    a.nav-link.active(aria-current='page' href='#') Nyondo
+  li.nav-item.dropdown
+    a.nav-link.dropdown-toggle(data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false') Services
+    ul.dropdown-menu
+      li
+        a.dropdown-item(href='#') Delivery
+      li
+        a.dropdown-item(href='#') Transport
+      li
+        a.dropdown-item(href='#') Repair
+  li.nav-item
+    a.nav-link(href='/login') Login
+  li.nav-item
+    a.nav-link(href="/userreg") Signup
+
+block content
+
+
+    

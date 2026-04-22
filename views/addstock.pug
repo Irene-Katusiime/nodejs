@@ -1,0 +1,30 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Nyondo-Stock Registration
+  link(rel='stylesheet' href='/css/add-stock.css')
+.form-container
+  h2 Stock Registration
+  form(action='/add-stock' method='post')
+    label Item Name
+    input(type='text' name='itemName' placeholder='Enter item name')
+    label Category
+    select(name='category')
+      option Select category
+      option Iron Sheets
+      option Cement
+      option Paint
+      option Steel Rods
+    label Quantity
+    input(type='number' name='quantity' placeholder='Enter quantity')
+    label Unit Price (UGX)
+    input(type='number' name='unitPrice' placeholder='Enter price')
+    label Supplier Name
+    input(type='text' name='supplierName' placeholder='Enter supplier name')
+    label Transportation cost
+    input(type='number' name='transportationCost' placeholder='Enter transportation cost')
+    label Date Received
+    input(type='date' name='dateReceived')
+    button(type='submit') Register Stock
+  p.note All fields marked are required
