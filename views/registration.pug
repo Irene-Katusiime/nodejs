@@ -3,13 +3,22 @@ block content
     .signup-container
         h2 Create Account
         // This is a form
-        form(action='/auth/userreg' method='post')
+        form(action='/userreg' method='post')
             .form-group
             label Full Name
             input(type='text' name='fullname' placeholder='Enter your name')
             .form-group
             label Email
             input(type='email' name='email' placeholder='Enter your email')
+            .form-group
+            label NIN
+            input(type='text' name='nin' placeholder='Enter NIN')
+            label Role
+            select(name='role')
+            option Select user role
+            option Admin
+            option Store manager
+            option Sales attendant
             .form-group
             label Password
             input(type='password' name='password' placeholder='Enter password')

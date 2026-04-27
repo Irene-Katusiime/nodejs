@@ -11,11 +11,11 @@ head
     input(type='text' name='itemName' placeholder='Enter item name')
     label Category
     select(name='category')
-      option Select category
-      option Iron Sheets
-      option Cement
-      option Paint
-      option Steel Rods
+      option(value='') Select category
+      option(value='Iron Sheets') Iron Sheets
+      option(value='Cement') Cement
+      option(value='Paint') Paint
+      option(value=' Steel Rods') Steel Rods
     label Quantity
     input(type='number' name='quantity' placeholder='Enter quantity')
     label Unit Price (UGX)
@@ -24,7 +24,5 @@ head
     input(type='text' name='supplierName' placeholder='Enter supplier name')
     label Transportation cost
     input(type='number' name='transportationCost' placeholder='Enter transportation cost')
-    label Date Received
-    input(type='date' name='dateReceived')
     button(type='submit') Register Stock
   p.note All fields marked are required

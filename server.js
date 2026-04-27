@@ -2,12 +2,17 @@
  const express = require('express');
  const expressSession = require('express-session')
  const path  = require('path')
+ const mongoose = require('mongoose');
+
+ require('dotenv').config();
+const connectDB = require('./config/db')
 
  //2.Instantiations
 const app = express();
 const port = 3000;
 
 //3.Configurations
+connectDB();
 //Set templating engine to pug
 app.set("view engine","pug");
 app.set("views", path.join(__dirname, "views"))
@@ -24,9 +29,9 @@ app.use(expressSession({
 
 //5.Routes
 app.use('/',require('./routes/indexRoutes'))
-app.use('/',require('./routes/addStockRoutes'))
+app.use('/',require('./routes/stockRoutes'))
 app.use('/sales',require('./routes/salesRoutes'))
-app.use('/auth',require('./routes/authRoutes'))
+app.use('/',require('./routes/authRoutes'))
 
 
 //This is the second last chunk of code
