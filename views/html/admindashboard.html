@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NyondoStock Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admindashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>NyondoStock</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#">Dashboard</a></li>
+                <li><a href="#">Inventory</a></li>
+                <li><a href="#">Sales & Receipts</a></li>
+                <li><a href="#">Supplier Credit</a></li>
+                <li><a href="#">Deposit Scheme</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Staff Management</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Overview</h1>
+                <div class="user-profile">
+                    <span>Admin: John Doe</span>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="card">
+                    <h3>Daily Sales</h3>
+                    <p class="stat-value">UGX 1,250,000</p>
+                </div>
+                <div class="card warning">
+                    <h3>Low Stock Items</h3>
+                    <p class="stat-value">12</p>
+                </div>
+                <div class="card">
+                    <h3>Total Deposits</h3>
+                    <p class="stat-value">UGX 4,800,000</p>
+                </div>
+                <div class="card danger">
+                    <h3>Credit Owed</h3>
+                    <p class="stat-value">UGX 3,100,000</p>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <h2>Recent Transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer/Supplier</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1024</td>
+                            <td>Musa Okello</td>
+                            <td>Deposit</td>
+                            <td>50,000</td>
+                            <td><span class="badge success">Confirmed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1023</td>
+                            <td>BuildIt Ltd</td>
+                            <td>Credit Pay</td>
+                            <td>800,000</td>
+                            <td><span class="badge pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

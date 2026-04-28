@@ -2,19 +2,19 @@ const express = require("express");
 const router = express.Router();
 const Registration = require("../models/Registration");
 
-router.get("/userreg", (req, res) => {
-  res.render("registration");
+router.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
-router.post("/userreg", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
-    const { fullname, email, nin, role, password } = req.body;
+    const { fullname, email, nin, role, password, phonenumber } = req.body;
     //Check if user already exists
     let existingUser = await Registration.findOne({
       email: email.toLowerCase(),
     });
     if (existingUser) {
-      return res.render("registration", {
+      return res.render("signup", {
         error: "Email is already registered",
       });
     }
@@ -24,14 +24,18 @@ router.post("/userreg", async (req, res) => {
       email: email.toLowerCase(),
       nin: nin.toUpperCase(),
       role,
-      password,
+      phonenumber
     });
     console.log(newUser);
-    await newUser.save();
-    res.redirect("/login");
+    await Registration.register(newUser,req.body.password, (err)=>{
+      if(err){
+        return res.redirect('/signup')
+      }
+       res.redirect("/login");
+    })
   } catch (error) {
     console.error(error);
-    res.render("registration", { error: error.message });
+    res.render("signup", { error: error.message });
   }
 });
 router.get("/login", (req, res) => {
