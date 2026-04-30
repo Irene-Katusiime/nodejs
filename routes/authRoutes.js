@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const passport = require('passport');
+
+//Importing a model
 const Registration = require("../models/Registration");
 
-router.get("/signup", (req, res) => {
+router.get("/signupform", (req, res) => {
   res.render("signup");
 });
 
@@ -31,8 +34,8 @@ router.post("/signup", async (req, res) => {
       if(err){
         return res.redirect('/signup')
       }
-       res.redirect("/login");
     })
+     res.redirect("/login");
   } catch (error) {
     console.error(error);
     res.render("signup", { error: error.message });
@@ -41,11 +44,30 @@ router.post("/signup", async (req, res) => {
 router.get("/login", (req, res) => {
   res.render("login");
 });
-router.post("/login", (req, res) => {
-  console.log(req.body);
+router.post("/login",passport.authenticate('local',{failureRedirect:'/login'}), (req, res) => {
+  if(req.user.role==='admin'){
+    res.redirect('/admindashboard')
+  }else if(req.user.role ==='sales attendant'){
+    res.redirect('/attendantdashboard')
+  }else if(req.user.role ==='store manager'){
+    res.redirect('/storemanagerdashboard')
+  }else{
+    res.redirect('/')
+  }
 });
 
+//Logout route
+router.get('/logout',(req,res,next)=>{
+  req.logout( (err)=>{
+    if(err){
+      return next(err);
+    }
+    res.redirect('/')
+  })
+})
+
 module.exports = router;
+
 //Full path in routing
 //Full path applies to browser URL, form action in the pug file and redirect in the routes
 // /auth/userreg

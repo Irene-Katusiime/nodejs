@@ -41,6 +41,12 @@ passport.use(Registration.createStrategy());
 passport.serializeUser(Registration.serializeUser());
 passport.deserializeUser(Registration.deserializeUser());
 
+//Global variable to make the logged in user available to all pug templates
+app.use((req,res,next)=>{
+  res.locals.user = req.user || null
+  next();
+})
+
 //5.Routes
 app.use('/',require('./routes/indexRoutes'))
 app.use('/',require('./routes/stockRoutes'))

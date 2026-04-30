@@ -8,7 +8,7 @@ router.get('/add-stock', (req, res)=>{
 
 router.post('/add-stock', async (req ,res)=>{
   try {
-    const {itemName,category,quantity,unitPrice,supplierName,transportationCost} =req.body;
+    const {itemName,category,quantity,unitPrice,supplierName,transportationCost,sellingprice} =req.body;
     const total = parseInt(quantity)*parseFloat(unitPrice);
     let newItem = new Stock({
       itemName,
@@ -17,7 +17,8 @@ router.post('/add-stock', async (req ,res)=>{
       unitPrice,
       supplierName,
       transportationCost,
-       total
+       total,
+       sellingprice
     })
     await newItem.save();
     res.redirect('/')

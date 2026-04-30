@@ -17,12 +17,14 @@ head
       option(value='Paint') Paint
       option(value=' Steel Rods') Steel Rods
     label Quantity
-    input(type='number' name='quantity' placeholder='Enter quantity')
+    input(type='number' name='quantity' placeholder='Enter quantity' required='')
+    label Selling price
+    input#sellingprice(type='number' name='sellingprice' placeholder='Enter selling price' required='')
     label Unit Price (UGX)
-    input(type='number' name='unitPrice' placeholder='Enter price')
+    input(type='number' name='unitPrice' placeholder='Enter price' required='')
     label Supplier Name
-    input(type='text' name='supplierName' placeholder='Enter supplier name')
+    input(type='text' name='supplierName' placeholder='Enter supplier name' required='')
     label Transportation cost
-    input(type='number' name='transportationCost' placeholder='Enter transportation cost')
+    input(type='number' name='transportationCost' placeholder='Enter transportation cost' required='')
     button(type='submit') Register Stock
   p.note All fields marked are required

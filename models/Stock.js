@@ -28,6 +28,10 @@ const stockSchema = new mongoose.Schema({
   },
   total: {
     type: Number
+  },
+  sellingprice: {
+    type: Number,
+    required: true,
   }
 });
 
