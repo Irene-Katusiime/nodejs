@@ -12,7 +12,6 @@ const port = 3000;
 app.set("view engine","pug");
 app.set("views", path.join(__dirname, "views"))
 
-
 //4.Middleware
 // Simple request time logger
 // app.use((req, res, next) => {
