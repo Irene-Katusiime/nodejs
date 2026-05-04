@@ -6,7 +6,7 @@
  const passport = require('passport');
 
 
- require('dotenv').config();
+require('dotenv').config();
 const connectDB = require('./config/db')
 
 //Import user model
@@ -48,7 +48,7 @@ app.use((req,res,next)=>{
 })
 
 //5.Routes
-app.use('/',require('./routes/indexRoutes'))
+// app.use('/',require('./routes/indexRoutes'))
 app.use('/',require('./routes/stockRoutes'))
 app.use('/',require('./routes/salesRoutes'))
 app.use('/',require('./routes/authRoutes'))

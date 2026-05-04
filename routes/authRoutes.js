@@ -5,7 +5,7 @@ const passport = require('passport');
 //Importing a model
 const Registration = require("../models/Registration");
 
-router.get("/signupform", (req, res) => {
+router.get("/signup", (req, res) => {
   res.render("signup");
 });
 

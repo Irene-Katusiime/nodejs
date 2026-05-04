@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const Stock = require('../models/Stock');
+const {isAttendant,isAdmin, isManager} = require('../middleware/auth');
 
-router.get('/add-stock', (req, res)=>{
+router.get('/add-stock',isManager, (req, res)=>{
     res.render('addstock')
 })
 
-router.post('/add-stock', async (req ,res)=>{
+router.post('/add-stock',isManager, async (req ,res)=>{
   try {
     const {itemName,category,quantity,unitPrice,supplierName,transportationCost,sellingprice} =req.body;
-    const total = parseInt(quantity)*parseFloat(unitPrice);
     let newItem = new Stock({
       itemName,
       category,
@@ -26,5 +26,15 @@ router.post('/add-stock', async (req ,res)=>{
     res.render('addstock',{error:error.message})
   }
 });
+
+//Update stock
+// router.get('/stock/edit/:id',isManager,async(re,res) =>{
+//   try {
+//     const item
+//   } catch (error) {
+    
+//   }
+
+// })
 
 module.exports = router;

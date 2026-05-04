@@ -1,0 +1,48 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Nyondo sales
+  link(rel='stylesheet' href='/css/sales.css')
+// Sidebar
+.sidebar
+  h2 Nyondo Stock
+  a(href='#') Dashboard
+  a(href='/add-stock') Stock
+  a.active(href='/sales') Sales
+  a(href='#') Suppliers
+  a(href='#') Deposits
+// Main content
+.main
+  h1 Sales Management
+  // Sales Table
+  .table-container
+    h2 Sales Records
+    table
+      thead
+        tr
+            th Item Name
+            th Quantity
+            th Unit Price (UGX)
+            th Customer Name 
+            th Customer Contact
+            th Attendant
+            th Date
+            th Total(UGX)
+      tbody 
+        each sale in sales 
+          tr
+           td= sale.itemname ? sale.itemname.itemName: ''
+           td= sale.quantity
+           td= sale.unitprice
+           td= sale.customername
+           td= sale.customercontact
+           td= sale.attendant ? sale.attendant.fullname: 'attendant was deleted'
+           td= new Date(sale.date).toLocaleDateString()
+           td= (sale.quantity* sale.unitprice).toLocaleString()
+        if sales.length === 0
+          tr 
+            td.text-centert (colspan='6') No sales have been recorded yet.
+         
+
+        

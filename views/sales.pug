@@ -19,9 +19,6 @@ head
   .form-container
     h2 Record Sale
     form(action='/sales' method='post')
-      //- .form-group
-      //-   label Date
-      //-   input(type='date' name='date')
       .form-group
         label Item Name
           select(name='itemId')
@@ -41,23 +38,7 @@ head
         label Customer Contact
         input(type='number' name='customercontact' placeholder='Enter customer contact' required='')
       button(type='submit') Add Sale
-  // Sales Table
-  .table-container
-    h2 Sales Records
-    table
-      tr
-        th Item
-        th Quantity
-        th Price (UGX)
-        th Total
-      tbody
-        tr
-          td Cement
-          td 10
-          td 15000
-          td 150000
-        tr
-          td Iron Sheets
-          td 5
-          td 40000
-          td 200000
+
+
+
+        
