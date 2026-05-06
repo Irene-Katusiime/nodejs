@@ -1,0 +1,102 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Generate Receipt - Nyondo Stock
+  link(rel='stylesheet' href='/css/receipts.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css')
+// Sidebar
+nav.sidebar
+  .sidebar-brand NYONDO STOCK
+  ul.nav-links
+    li
+      a(href='#')
+        i.fas.fa-th-large
+        |  Dashboard
+    li
+      a(href='#')
+        i.fas.fa-boxes
+        |  Inventory
+    li.active
+      a(href='#')
+        i.fas.fa-file-invoice
+        |  New Receipt
+    li
+      a(href='#')
+        i.fas.fa-history
+        |  Sales Log
+    li
+      a(href='#')
+        i.fas.fa-sign-out-alt
+        |  Logout
+// Main Content
+main.content-area
+  header.top-nav
+    h1 Create Receipt
+    .user-info Admin: John Doe
+  section.receipt-card
+    form#receiptForm
+      // Header Info
+      .receipt-header
+        .company-info
+          h2 NYONDO STOCK LTD
+          p Kampala, Uganda
+          p +256 700 000000
+        .receipt-meta
+          .input-group
+            label Receipt No:
+            input(type='text' value='#NY-8821' readonly='')
+          .input-group
+            label Date:
+            input(type='date' required='')
+      hr.divider
+      // Customer Info
+      .customer-section
+        .input-field
+          label Customer Name
+          input(type='text' placeholder='Walking Customer')
+        .input-field
+          label Payment Method
+          select
+            option Cash
+            option Mobile Money
+            option Bank Transfer
+      // Items Table
+      table.receipt-table
+        thead
+          tr
+            th Item Description
+            th(width='100') Qty
+            th(width='150') Unit Price
+            th(width='150') Total
+        tbody
+          tr
+            td
+              input(type='text' placeholder='Enter item name')
+            td
+              input(type='number' value='1')
+            td
+              input(type='number' placeholder='0.00')
+            td.row-total UGX 0.00
+      button.btn-add(type='button')
+        i.fas.fa-plus
+        |  Add Item
+      // Calculation Area
+      .calculation-area
+        .calc-row
+          span Subtotal:
+          span UGX 0.00
+        .calc-row
+          span Tax (0%):
+          span UGX 0.00
+        .calc-row.grand-total
+          span Grand Total:
+          span UGX 0.00
+      // Actions
+      .form-actions
+        button.btn-print(type='button' onclick='window.print()')
+          i.fas.fa-print
+          |  Print Receipt
+        button.btn-save(type='submit')
+          i.fas.fa-save
+          |  Save Transaction

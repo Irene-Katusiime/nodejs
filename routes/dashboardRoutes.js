@@ -37,5 +37,21 @@ router.get('/storemanagerdashboard', (req, res)=>{
     res.render('managerdashboard')
 });
 
+router.get('/deposit', (req, res)=>{
+    res.render('deposits')
+});
+
+router.post('/deposit', (req, res)=>{
+    res.render('deposits')
+});
+
+router.get('/receipt', (req, res)=>{
+    res.render('receipts')
+});
+
+router.post('/receipt', (req, res)=>{
+    res.render('receipts')
+});
+
 module.exports = router;
 
