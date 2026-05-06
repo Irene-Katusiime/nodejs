@@ -31,7 +31,10 @@ const stockSchema = new mongoose.Schema({
   },
   sellingprice: {
     type: Number,
-    required: true,
+    required: true
+  },
+  itemimage: {
+    type: String
   }
 });
 

@@ -6,7 +6,7 @@ head
   link(rel='stylesheet' href='/css/add-stock.css')
 .form-container
   h2 Stock Registration
-  form(action='/add-stock' method='post')
+  form(action='/add-stock' method='post' enctype="multipart/form-data")
     label Item Name
     input(type='text' name='itemName' placeholder='Enter item name')
     label Category
@@ -26,5 +26,7 @@ head
     input(type='text' name='supplierName' placeholder='Enter supplier name' required='')
     label Transportation cost
     input(type='number' name='transportationCost' placeholder='Enter transportation cost' required='')
+    label Item Image
+    input(type='file' name='itemimage')
     button(type='submit') Register Stock
   p.note All fields marked are required

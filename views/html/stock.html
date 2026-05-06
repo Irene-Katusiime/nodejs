@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyondo-Stock Dashboard</title>
+     <link rel="stylesheet" href="stocklist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+    <div class="sidebar-header">
+        NYONDO STOCK
+    </div>
+    <ul class="sidebar-menu">
+        <li class="active"><i class="fas fa-home"></i> <span>Dashboard</span></li>
+        <li><i class="fas fa-plus-circle"></i> <span>Register Stock</span></li>
+        <li><i class="fas fa-boxes"></i> <span>Inventory</span></li>
+        <li><i class="fas fa-users"></i> <span>Suppliers</span></li>
+        <li><i class="fas fa-chart-line"></i> <span>Sales Reports</span></li>
+        <li><i class="fas fa-cog"></i> <span>Settings</span></li>
+    </ul>
+    <div class="sidebar-footer">
+        © 2026 Nyondo Ltd
+    </div>
+</nav>
+
+<!-- Main Content Area -->
+<main class="main-content">
+    
+    <div class="top-bar">
+        <h2 style="margin: 0; border: none; padding: 0;">Stock Overview</h2>
+        <div class="user-profile">
+            <i class="fas fa-user-circle"></i> Admin User
+        </div>
+    </div>
+
+    <!-- Metrics Section -->
+    <div class="stats-grid">
+        <div class="card">
+            <i class="fas fa-boxes"></i>
+            <div class="card-info">
+                <h3>Total Items</h3>
+                <p>1,240</p>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-layer-group"></i>
+            <div class="card-info">
+                <h3>Categories</h3>
+                <p>4</p>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-money-bill-wave"></i>
+            <div class="card-info">
+                <h3>Stock Value</h3>
+                <p>UGX 45.2M</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stock Table -->
+    <div class="table-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="margin: 0;">Stock Levels</h3>
+            <button style="background: var(--success); color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer;">
+                <i class="fas fa-download"></i> Export PDF
+            </button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Item Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Selling Price</th>
+                    <th>Supplier</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://via.placeholder.com/40" class="item-img" alt="item"></td>
+                    <td><b>Super Roof Iron Sheets</b></td>
+                    <td><span class="badge badge-category">Iron Sheets</span></td>
+                    <td><span class="badge badge-stock">150 Units</span></td>
+                    <td>35,000</td>
+                    <td>42,000</td>
+                    <td>Uganda Baati</td>
+                    <td>
+                        <button class="action-btn"><i class="fas fa-edit"></i></button>
+                        <button class="action-btn"><i class="fas fa-trash" style="color: var(--danger);"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="https://via.placeholder.com/40" class="item-img" alt="item"></td>
+                    <td><b>Tororo Cement (50kg)</b></td>
+                    <td><span class="badge badge-category">Cement</span></td>
+                    <td><span class="badge badge-stock">85 Units</span></td>
+                    <td>32,000</td>
+                    <td>38,000</td>
+                    <td>Hima Supplies</td>
+                    <td>
+                        <button class="action-btn"><i class="fas fa-edit"></i></button>
+                        <button class="action-btn"><i class="fas fa-trash" style="color: var(--danger);"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>

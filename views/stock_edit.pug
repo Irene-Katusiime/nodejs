@@ -1,0 +1,20 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Nyondo-Stock Registration
+  link(rel='stylesheet' href='/css/add-stock.css')
+.form-container
+  h2 Stock Registration
+  form(action=`/stock/edit/${item._id}` method='post')
+    label Quantity
+    input(type='number' name='quantity' value=item.quantity placeholder='Enter quantity' required='')
+    label Selling price
+    input#sellingprice(type='number' name='sellingprice' value=item.sellingprice placeholder='Enter selling price' required='')
+    label Unit Price (UGX)
+    input(type='number' name='unitPrice' placeholder='Enter price' value=item.unitPrice required='')
+    label Supplier Name
+    input(type='text' name='supplierName' placeholder='Enter supplier name' value=item.supplierName required='')
+    label Transportation cost
+    input(type='number' name='transportationCost' placeholder='Enter transportation cost' value=item.transportationCost required='')
+    button(type='submit') Update Stock

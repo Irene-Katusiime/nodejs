@@ -28,4 +28,16 @@ const isAttendant = (req,res,next) => {
     res.status(403).send('Access denied:You are not an attendant')
 }
 
-module.exports = {isAuthenticated,isManager,isAdmin,isAttendant}
+const authorizeRoles = (...roles) => {
+    return (req, res, next) => {
+        if(!req.isAuthenticated()){
+            return res.redirect('/login')
+        }
+        if(!roles.includes(req.user.role)) {
+            return res.status(403).send('Access denied');
+        }
+        next();
+    };
+};
+
+module.exports = {isAuthenticated,isManager,isAdmin,isAttendant,authorizeRoles}

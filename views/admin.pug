@@ -46,42 +46,15 @@ head
   .stats-grid
     .stat-card
       .stat-info
-        p Total Stock Value
-        h3 UGX 15,200,000
+        p Stock Expenditure
+        h3 #{stats.inventoryValue.toLocaleString()} UGX
       i.fas.fa-warehouse
     .stat-card
       .stat-info
-        p Total Deposits (Pool)
-        h3 UGX 4,850,000
+        p  Total Sales Revenue
+        h3 #{stats.salesRevenue.toLocaleString()} UGX
       i.fas.fa-coins
     .stat-card
       .stat-info
-        p Supplier Debt
-        h3.debt-text UGX 2,100,000
-      i.fas.fa-exclamation-circle
-  .recent-section
-    .table-container
       h3 Recent Stock Updates
-      table
-        thead
-          tr
-            th Item Name
-            th Category
-            th Cost Price
-            th Stock Level
-            th Status
-        tbody
-          tr
-            td Cement (Tororo)
-            td Building
-            td UGX 32,000
-            td 150 Bags
-            td
-              span.status-ok In Stock
-          tr
-            td Iron Sheets (G28)
-            td Roofing
-            td UGX 45,000
-            td 12 Items
-            td
-              span.status-low Low Stock
+      

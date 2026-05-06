@@ -1,0 +1,38 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Nyondo sales
+  link(rel='stylesheet' href='/css/sales.css')
+// Sidebar
+.sidebar
+  h2 Nyondo Stock
+  a(href='#') Dashboard
+  a(href='/add-stock') Stock
+  a.active(href='/sales') Sales
+  a(href='#') Suppliers
+  a(href='#') Deposits
+// Main content
+.main
+  h1 Sales Management
+  // sales form
+  .form-container
+    h2 Record Sale
+    form(action=`/sale/edit/${sale._id}` method='post')
+      .form-group
+        label Quantity
+        input(type='number' name='quantity' value=sale.quantity placeholder='Enter quantity' required='')
+      .form-group
+        label Unit Price (UGX)
+        input(type='number' name='unitprice' value=sale.unitprice placeholder='Enter price' required='')
+      .form-group
+        label Customer Name
+        input(type='text' name='customername' value=sale.customername placeholder='Enter customer name' required='')
+      .form-group
+        label Customer Contact
+        input(type='number' name='customercontact' value=sale.customercontact placeholder='Enter customer contact' required='')
+      button(type='submit') Update sale record
+
+
+
+        
